@@ -1,76 +1,70 @@
 Vulnerability Assessment Report
-Website Tested:
-The security assessment was conducted on the following demo application:
-OWASP Juice Shop
 
-This application was selected for educational and ethical security testing purposes under a controlled read-only scope.
+The security assessment was conducted on a locally hosted instance of OWASP Juice Shop.
+Target URL
+http://localhost:3000
+OWASP Juice Shop is an intentionally vulnerable web application designed for cybersecurity learning and security testing practice,run and host the website locally using docker desktop
 
 Scope of Assessment
-Objective
-The objective of this assessment was to identify common security weaknesses in a web application using passive and non-intrusive techniques.
+The assessment focused only on passive and ethical security analysis.
 
-Allowed Activities
-Public-facing page analysis
-Passive vulnerability scanning
+In Scope:
+Public-facing web application analysis
+Passive scanning and crawling
 Security header inspection
-Cookie and configuration analysis
-Browser-based inspection using developer tools
-Restricted Activities
-
-The following activities were strictly excluded from the assessment:
+Cookie configuration analysis
+Basic port and service enumeration
+Information disclosure checks
+Out of Scope:
 Exploitation attempts
-Authentication bypass
-Brute force attacks
+Login bypass
+Brute-force attacks
 Denial-of-Service (DoS)
-Any action capable of damaging or disrupting the application
+Malware execution
+Any destructive or harmful activity
 
-This assessment was conducted strictly as a professional security audit and not as penetration testing or hacking activity.
+All testing was performed in a safe local environment for educational purposes only.
 
 Tools Used
-
-Nmap
+1. Nmap
 Used for:
-Basic port analysis
-Exposure identification
-Service visibility inspection
+Open port detection
+Service exposure analysis
+Basic network reconnaissance
+Key Finding
+Port 3000 exposed for web application access
 
-OWASP ZAP
+2. OWASP ZAP
 Used for:
 Passive vulnerability scanning
-Security header analysis
-Configuration review
+Website crawling and endpoint discovery
+Detection of exposed files and information disclosure issues
+Key Findings
+Sensitive files exposed
+Backup files publicly accessible
+Information disclosure through file structure
 
-Firefox Developer Edition
+3. Firefox Developer Edition
 Used for:
-Header inspection
-Cookie analysis
-Browser security inspection
-Client-side analysis using DevTools
+Inspecting HTTP response headers
+Analyzing cookie security settings
+Reviewing browser-side security protections
+Key Findings
+Missing Content Security Policy (CSP)
+Missing HSTS
+Insecure cookie configuration
+Partial implementation of security headers
 
-Canva
-Used for:
-Designing the professional vulnerability assessment report
-Organizing findings visually
-Creating presentation-ready documentation
-Assessment Summary
-
-The assessment identified several security weaknesses including:
-Exposure of sensitive files
-Publicly accessible backup files
-Missing security headers
-Insecure cookie configurations
-Information disclosure issues
-
-Findings were classified into:
+Risk Classification
+The identified vulnerabilities were categorized as:
 High Risk
 Medium Risk
 Low Risk
+based on their potential business and security impact.
 
-Each finding includes:
-Simple explanation
-Business impact
-Risk classification
-Practical remediation recommendations
-Ethical Notice
-
-This assessment was performed strictly within ethical and educational boundaries using passive techniques only. No exploitation or harmful activity was conducted during the assessment process.
+Ethics Statement
+This project followed ethical cybersecurity practices:
+Passive testing only
+No exploitation performed
+No harmful actions executed
+Educational and research purposes only
